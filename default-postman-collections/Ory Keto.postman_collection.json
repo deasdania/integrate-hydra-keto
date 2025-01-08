@@ -1,0 +1,2741 @@
+{
+	"info": {
+		"_postman_id": "50913dea-51f8-43f3-919f-9dc16ae1353b",
+		"name": "Ory Keto",
+		"description": "Documentation for all of Ory Keto's REST APIs. gRPC is documented separately.\n\n\nContact Support:\n Email: hi@ory.sh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34142259",
+		"_collection_link": "https://www.postman.com/ory-docs/ory/collection/01fs30r/ory-keto?action=share&source=collection_link&creator=34142259"
+	},
+	"item": [
+		{
+			"name": "version",
+			"item": [
+				{
+					"name": "Return Running Software Version.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/version",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"version"
+							]
+						},
+						"description": "This endpoint returns the version of Ory Keto.\n\nIf the service supports TLS Edge Termination, this endpoint does not require the\n`X-Forwarded-Proto` header to be set.\n\nBe aware that if you are running multiple nodes of this service, the version will never\nrefer to the cluster state, only to a single instance."
+					},
+					"response": [
+						{
+							"name": "Returns the Ory Keto version.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/version",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"version"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"version\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "relation-tuples",
+			"item": [
+				{
+					"name": "expand",
+					"item": [
+						{
+							"name": "Expand a Relationship into permissions.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/relation-tuples/expand?namespace=<string>&object=<string>&relation=<string>&max-depth=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"relation-tuples",
+										"expand"
+									],
+									"query": [
+										{
+											"key": "namespace",
+											"value": "<string>",
+											"description": "(Required) Namespace of the Subject Set"
+										},
+										{
+											"key": "object",
+											"value": "<string>",
+											"description": "(Required) Object of the Subject Set"
+										},
+										{
+											"key": "relation",
+											"value": "<string>",
+											"description": "(Required) Relation of the Subject Set"
+										},
+										{
+											"key": "max-depth",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "Use this endpoint to expand a relationship tuple into permissions."
+							},
+							"response": [
+								{
+									"name": "expandedPermissionTree",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/expand?namespace=<string>&object=<string>&relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"expand"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "(Required) Namespace of the Subject Set"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "(Required) Object of the Subject Set"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "(Required) Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"leaf\",\n  \"children\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/expandedPermissionTree detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/expandedPermissionTree detected>\"\n    }\n  ],\n  \"tuple\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\",\n    \"subject_id\": \"<string>\",\n    \"subject_set\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\"\n    }\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/expand?namespace=<string>&object=<string>&relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"expand"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "(Required) Namespace of the Subject Set"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "(Required) Object of the Subject Set"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "(Required) Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/expand?namespace=<string>&object=<string>&relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"expand"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "(Required) Namespace of the Subject Set"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "(Required) Object of the Subject Set"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "(Required) Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/expand?namespace=<string>&object=<string>&relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"expand"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "(Required) Namespace of the Subject Set"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "(Required) Object of the Subject Set"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "(Required) Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "check",
+					"item": [
+						{
+							"name": "openapi",
+							"item": [
+								{
+									"name": "Check a permission",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check/openapi?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check",
+												"openapi"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "To learn how relationship tuples and the check works, head over to [the documentation](https://www.ory.sh/docs/keto/concepts/api-overview)."
+									},
+									"response": [
+										{
+											"name": "checkPermissionResult",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/relation-tuples/check/openapi?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"relation-tuples",
+														"check",
+														"openapi"
+													],
+													"query": [
+														{
+															"key": "namespace",
+															"value": "<string>",
+															"description": "Namespace of the Relationship"
+														},
+														{
+															"key": "object",
+															"value": "<string>",
+															"description": "Object of the Relationship"
+														},
+														{
+															"key": "relation",
+															"value": "<string>",
+															"description": "Relation of the Relationship"
+														},
+														{
+															"key": "subject_id",
+															"value": "<string>",
+															"description": "SubjectID of the Relationship"
+														},
+														{
+															"key": "subject_set.namespace",
+															"value": "<string>",
+															"description": "Namespace of the Subject Set"
+														},
+														{
+															"key": "subject_set.object",
+															"value": "<string>",
+															"description": "Object of the Subject Set"
+														},
+														{
+															"key": "subject_set.relation",
+															"value": "<string>",
+															"description": "Relation of the Subject Set"
+														},
+														{
+															"key": "max-depth",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"allowed\": \"<boolean>\"\n}"
+										},
+										{
+											"name": "errorGeneric",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/relation-tuples/check/openapi?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"relation-tuples",
+														"check",
+														"openapi"
+													],
+													"query": [
+														{
+															"key": "namespace",
+															"value": "<string>",
+															"description": "Namespace of the Relationship"
+														},
+														{
+															"key": "object",
+															"value": "<string>",
+															"description": "Object of the Relationship"
+														},
+														{
+															"key": "relation",
+															"value": "<string>",
+															"description": "Relation of the Relationship"
+														},
+														{
+															"key": "subject_id",
+															"value": "<string>",
+															"description": "SubjectID of the Relationship"
+														},
+														{
+															"key": "subject_set.namespace",
+															"value": "<string>",
+															"description": "Namespace of the Subject Set"
+														},
+														{
+															"key": "subject_set.object",
+															"value": "<string>",
+															"description": "Object of the Subject Set"
+														},
+														{
+															"key": "subject_set.relation",
+															"value": "<string>",
+															"description": "Relation of the Subject Set"
+														},
+														{
+															"key": "max-depth",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+										},
+										{
+											"name": "errorGeneric",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/relation-tuples/check/openapi?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"relation-tuples",
+														"check",
+														"openapi"
+													],
+													"query": [
+														{
+															"key": "namespace",
+															"value": "<string>",
+															"description": "Namespace of the Relationship"
+														},
+														{
+															"key": "object",
+															"value": "<string>",
+															"description": "Object of the Relationship"
+														},
+														{
+															"key": "relation",
+															"value": "<string>",
+															"description": "Relation of the Relationship"
+														},
+														{
+															"key": "subject_id",
+															"value": "<string>",
+															"description": "SubjectID of the Relationship"
+														},
+														{
+															"key": "subject_set.namespace",
+															"value": "<string>",
+															"description": "Namespace of the Subject Set"
+														},
+														{
+															"key": "subject_set.object",
+															"value": "<string>",
+															"description": "Object of the Subject Set"
+														},
+														{
+															"key": "subject_set.relation",
+															"value": "<string>",
+															"description": "Relation of the Subject Set"
+														},
+														{
+															"key": "max-depth",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Check a permission",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check/openapi?max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check",
+												"openapi"
+											],
+											"query": [
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "To learn how relationship tuples and the check works, head over to [the documentation](https://www.ory.sh/docs/keto/concepts/api-overview)."
+									},
+									"response": [
+										{
+											"name": "checkPermissionResult",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/relation-tuples/check/openapi?max-depth=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"relation-tuples",
+														"check",
+														"openapi"
+													],
+													"query": [
+														{
+															"key": "max-depth",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"allowed\": \"<boolean>\"\n}"
+										},
+										{
+											"name": "errorGeneric",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/relation-tuples/check/openapi?max-depth=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"relation-tuples",
+														"check",
+														"openapi"
+													],
+													"query": [
+														{
+															"key": "max-depth",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+										},
+										{
+											"name": "errorGeneric",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/relation-tuples/check/openapi?max-depth=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"relation-tuples",
+														"check",
+														"openapi"
+													],
+													"query": [
+														{
+															"key": "max-depth",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Check a permission",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/relation-tuples/check?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"relation-tuples",
+										"check"
+									],
+									"query": [
+										{
+											"key": "namespace",
+											"value": "<string>",
+											"description": "Namespace of the Relationship"
+										},
+										{
+											"key": "object",
+											"value": "<string>",
+											"description": "Object of the Relationship"
+										},
+										{
+											"key": "relation",
+											"value": "<string>",
+											"description": "Relation of the Relationship"
+										},
+										{
+											"key": "subject_id",
+											"value": "<string>",
+											"description": "SubjectID of the Relationship"
+										},
+										{
+											"key": "subject_set.namespace",
+											"value": "<string>",
+											"description": "Namespace of the Subject Set"
+										},
+										{
+											"key": "subject_set.object",
+											"value": "<string>",
+											"description": "Object of the Subject Set"
+										},
+										{
+											"key": "subject_set.relation",
+											"value": "<string>",
+											"description": "Relation of the Subject Set"
+										},
+										{
+											"key": "max-depth",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "To learn how relationship tuples and the check works, head over to [the documentation](https://www.ory.sh/docs/keto/concepts/api-overview)."
+							},
+							"response": [
+								{
+									"name": "checkPermissionResult",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"allowed\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "checkPermissionResult",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"allowed\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>&max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												},
+												{
+													"key": "max-depth",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Check a permission",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/relation-tuples/check?max-depth=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"relation-tuples",
+										"check"
+									],
+									"query": [
+										{
+											"key": "max-depth",
+											"value": "<long>",
+											"description": "nolint:deadcode,unused"
+										}
+									]
+								},
+								"description": "To learn how relationship tuples and the check works, head over to [the documentation](https://www.ory.sh/docs/keto/concepts/api-overview)."
+							},
+							"response": [
+								{
+									"name": "checkPermissionResult",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "max-depth",
+													"value": "<long>",
+													"description": "nolint:deadcode,unused"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"allowed\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "max-depth",
+													"value": "<long>",
+													"description": "nolint:deadcode,unused"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "checkPermissionResult",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "max-depth",
+													"value": "<long>",
+													"description": "nolint:deadcode,unused"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"allowed\": \"<boolean>\"\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/relation-tuples/check?max-depth=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"relation-tuples",
+												"check"
+											],
+											"query": [
+												{
+													"key": "max-depth",
+													"value": "<long>",
+													"description": "nolint:deadcode,unused"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Query relationships",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/relation-tuples?page_token=<string>&page_size=<long>&namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"relation-tuples"
+							],
+							"query": [
+								{
+									"key": "page_token",
+									"value": "<string>"
+								},
+								{
+									"key": "page_size",
+									"value": "<long>"
+								},
+								{
+									"key": "namespace",
+									"value": "<string>",
+									"description": "Namespace of the Relationship"
+								},
+								{
+									"key": "object",
+									"value": "<string>",
+									"description": "Object of the Relationship"
+								},
+								{
+									"key": "relation",
+									"value": "<string>",
+									"description": "Relation of the Relationship"
+								},
+								{
+									"key": "subject_id",
+									"value": "<string>",
+									"description": "SubjectID of the Relationship"
+								},
+								{
+									"key": "subject_set.namespace",
+									"value": "<string>",
+									"description": "Namespace of the Subject Set"
+								},
+								{
+									"key": "subject_set.object",
+									"value": "<string>",
+									"description": "Object of the Subject Set"
+								},
+								{
+									"key": "subject_set.relation",
+									"value": "<string>",
+									"description": "Relation of the Subject Set"
+								}
+							]
+						},
+						"description": "Get all relationships that match the query. Only the namespace field is required."
+					},
+					"response": [
+						{
+							"name": "relationships",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/relation-tuples?page_token=<string>&page_size=<long>&namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"relation-tuples"
+									],
+									"query": [
+										{
+											"key": "page_token",
+											"value": "<string>"
+										},
+										{
+											"key": "page_size",
+											"value": "<long>"
+										},
+										{
+											"key": "namespace",
+											"value": "<string>",
+											"description": "Namespace of the Relationship"
+										},
+										{
+											"key": "object",
+											"value": "<string>",
+											"description": "Object of the Relationship"
+										},
+										{
+											"key": "relation",
+											"value": "<string>",
+											"description": "Relation of the Relationship"
+										},
+										{
+											"key": "subject_id",
+											"value": "<string>",
+											"description": "SubjectID of the Relationship"
+										},
+										{
+											"key": "subject_set.namespace",
+											"value": "<string>",
+											"description": "Namespace of the Subject Set"
+										},
+										{
+											"key": "subject_set.object",
+											"value": "<string>",
+											"description": "Object of the Subject Set"
+										},
+										{
+											"key": "subject_set.relation",
+											"value": "<string>",
+											"description": "Relation of the Subject Set"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"next_page_token\": \"<string>\",\n  \"relation_tuples\": [\n    {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    },\n    {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  ]\n}"
+						},
+						{
+							"name": "errorGeneric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/relation-tuples?page_token=<string>&page_size=<long>&namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"relation-tuples"
+									],
+									"query": [
+										{
+											"key": "page_token",
+											"value": "<string>"
+										},
+										{
+											"key": "page_size",
+											"value": "<long>"
+										},
+										{
+											"key": "namespace",
+											"value": "<string>",
+											"description": "Namespace of the Relationship"
+										},
+										{
+											"key": "object",
+											"value": "<string>",
+											"description": "Object of the Relationship"
+										},
+										{
+											"key": "relation",
+											"value": "<string>",
+											"description": "Relation of the Relationship"
+										},
+										{
+											"key": "subject_id",
+											"value": "<string>",
+											"description": "SubjectID of the Relationship"
+										},
+										{
+											"key": "subject_set.namespace",
+											"value": "<string>",
+											"description": "Namespace of the Subject Set"
+										},
+										{
+											"key": "subject_set.object",
+											"value": "<string>",
+											"description": "Object of the Subject Set"
+										},
+										{
+											"key": "subject_set.relation",
+											"value": "<string>",
+											"description": "Relation of the Subject Set"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+						},
+						{
+							"name": "errorGeneric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/relation-tuples?page_token=<string>&page_size=<long>&namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"relation-tuples"
+									],
+									"query": [
+										{
+											"key": "page_token",
+											"value": "<string>"
+										},
+										{
+											"key": "page_size",
+											"value": "<long>"
+										},
+										{
+											"key": "namespace",
+											"value": "<string>",
+											"description": "Namespace of the Relationship"
+										},
+										{
+											"key": "object",
+											"value": "<string>",
+											"description": "Object of the Relationship"
+										},
+										{
+											"key": "relation",
+											"value": "<string>",
+											"description": "Relation of the Relationship"
+										},
+										{
+											"key": "subject_id",
+											"value": "<string>",
+											"description": "SubjectID of the Relationship"
+										},
+										{
+											"key": "subject_set.namespace",
+											"value": "<string>",
+											"description": "Namespace of the Subject Set"
+										},
+										{
+											"key": "subject_set.object",
+											"value": "<string>",
+											"description": "Object of the Subject Set"
+										},
+										{
+											"key": "subject_set.relation",
+											"value": "<string>",
+											"description": "Relation of the Subject Set"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "opl",
+			"item": [
+				{
+					"name": "syntax",
+					"item": [
+						{
+							"name": "check",
+							"item": [
+								{
+									"name": "Check the syntax of an OPL file",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/plain"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<string>"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/opl/syntax/check",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"opl",
+												"syntax",
+												"check"
+											]
+										},
+										"description": "The OPL file is expected in the body of the request."
+									},
+									"response": [
+										{
+											"name": "checkOplSyntaxResult",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<string>"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/opl/syntax/check",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"opl",
+														"syntax",
+														"check"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"errors\": [\n    {\n      \"end\": {\n        \"Line\": \"<long>\",\n        \"column\": \"<long>\"\n      },\n      \"message\": \"<string>\",\n      \"start\": {\n        \"Line\": \"<long>\",\n        \"column\": \"<long>\"\n      }\n    },\n    {\n      \"end\": {\n        \"Line\": \"<long>\",\n        \"column\": \"<long>\"\n      },\n      \"message\": \"<string>\",\n      \"start\": {\n        \"Line\": \"<long>\",\n        \"column\": \"<long>\"\n      }\n    }\n  ]\n}"
+										},
+										{
+											"name": "errorGeneric",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<string>"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/opl/syntax/check",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"opl",
+														"syntax",
+														"check"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+										},
+										{
+											"name": "errorGeneric",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<string>"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/opl/syntax/check",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"opl",
+														"syntax",
+														"check"
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "namespaces",
+			"item": [
+				{
+					"name": "Query namespaces",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/namespaces",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"namespaces"
+							]
+						},
+						"description": "Get all namespaces"
+					},
+					"response": [
+						{
+							"name": "relationshipNamespaces",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/namespaces",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"namespaces"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"namespaces\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "errorGeneric",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/namespaces",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"namespaces"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "ready",
+					"item": [
+						{
+							"name": "Check HTTP Server and Database Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/health/ready",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"health",
+										"ready"
+									]
+								},
+								"description": "This endpoint returns a HTTP 200 status code when Ory Keto is up running and the environment dependencies (e.g.\nthe database) are responsive as well.\n\nIf the service supports TLS Edge Termination, this endpoint does not require the\n`X-Forwarded-Proto` header to be set.\n\nBe aware that if you are running multiple nodes of Ory Keto, the health status will never\nrefer to the cluster state, only to a single instance."
+							},
+							"response": [
+								{
+									"name": "Ory Keto is ready to accept requests.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/health/ready",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"health",
+												"ready"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<string>\"\n}"
+								},
+								{
+									"name": "Ory Kratos is not yet ready to accept requests.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/health/ready",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"health",
+												"ready"
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"errors\": {\n    \"etc76\": \"<string>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "alive",
+					"item": [
+						{
+							"name": "Check HTTP Server Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/health/alive",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"health",
+										"alive"
+									]
+								},
+								"description": "This endpoint returns a HTTP 200 status code when Ory Keto is accepting incoming\nHTTP requests. This status does currently not include checks whether the database connection is working.\n\nIf the service supports TLS Edge Termination, this endpoint does not require the\n`X-Forwarded-Proto` header to be set.\n\nBe aware that if you are running multiple nodes of this service, the health status will never\nrefer to the cluster state, only to a single instance."
+							},
+							"response": [
+								{
+									"name": "Ory Keto is ready to accept connections.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/health/alive",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"health",
+												"alive"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<string>\"\n}"
+								},
+								{
+									"name": "genericError",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/health/alive",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"health",
+												"alive"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<long>\",\n  \"debug\": \"<string>\",\n  \"details\": {\n    \"nostrud_b\": {}\n  },\n  \"id\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"request\": \"<string>\",\n  \"status\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "relation-tuples",
+					"item": [
+						{
+							"name": "Delete Relationships",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/admin/relation-tuples?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"relation-tuples"
+									],
+									"query": [
+										{
+											"key": "namespace",
+											"value": "<string>",
+											"description": "Namespace of the Relationship"
+										},
+										{
+											"key": "object",
+											"value": "<string>",
+											"description": "Object of the Relationship"
+										},
+										{
+											"key": "relation",
+											"value": "<string>",
+											"description": "Relation of the Relationship"
+										},
+										{
+											"key": "subject_id",
+											"value": "<string>",
+											"description": "SubjectID of the Relationship"
+										},
+										{
+											"key": "subject_set.namespace",
+											"value": "<string>",
+											"description": "Namespace of the Subject Set"
+										},
+										{
+											"key": "subject_set.object",
+											"value": "<string>",
+											"description": "Object of the Subject Set"
+										},
+										{
+											"key": "subject_set.relation",
+											"value": "<string>",
+											"description": "Relation of the Subject Set"
+										}
+									]
+								},
+								"description": "Use this endpoint to delete relationships"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples?namespace=<string>&object=<string>&relation=<string>&subject_id=<string>&subject_set.namespace=<string>&subject_set.object=<string>&subject_set.relation=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											],
+											"query": [
+												{
+													"key": "namespace",
+													"value": "<string>",
+													"description": "Namespace of the Relationship"
+												},
+												{
+													"key": "object",
+													"value": "<string>",
+													"description": "Object of the Relationship"
+												},
+												{
+													"key": "relation",
+													"value": "<string>",
+													"description": "Relation of the Relationship"
+												},
+												{
+													"key": "subject_id",
+													"value": "<string>",
+													"description": "SubjectID of the Relationship"
+												},
+												{
+													"key": "subject_set.namespace",
+													"value": "<string>",
+													"description": "Namespace of the Subject Set"
+												},
+												{
+													"key": "subject_set.object",
+													"value": "<string>",
+													"description": "Object of the Subject Set"
+												},
+												{
+													"key": "subject_set.relation",
+													"value": "<string>",
+													"description": "Relation of the Subject Set"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Patch Multiple Relationships",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  },\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/relation-tuples",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"relation-tuples"
+									]
+								},
+								"description": "Use this endpoint to patch one or more relationships."
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  },\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  }\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  },\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  }\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  },\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  }\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  },\n  {\n    \"action\": \"delete\",\n    \"relation_tuple\": {\n      \"namespace\": \"<string>\",\n      \"object\": \"<string>\",\n      \"relation\": \"<string>\",\n      \"subject_id\": \"<string>\",\n      \"subject_set\": {\n        \"namespace\": \"<string>\",\n        \"object\": \"<string>\",\n        \"relation\": \"<string>\"\n      }\n    }\n  }\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create a Relationship",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/admin/relation-tuples",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"relation-tuples"
+									]
+								},
+								"description": "Use this endpoint to create a relationship."
+							},
+							"response": [
+								{
+									"name": "relationship",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "errorGeneric",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"namespace\": \"<string>\",\n  \"object\": \"<string>\",\n  \"relation\": \"<string>\",\n  \"subject_id\": \"<string>\",\n  \"subject_set\": {\n    \"namespace\": \"<string>\",\n    \"object\": \"<string>\",\n    \"relation\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/admin/relation-tuples",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"admin",
+												"relation-tuples"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": {\n    \"message\": \"<string>\",\n    \"code\": \"<long>\",\n    \"debug\": \"<string>\",\n    \"details\": {\n      \"Lorem372\": {},\n      \"exercitation_8\": {},\n      \"quia\": {}\n    },\n    \"id\": \"<string>\",\n    \"reason\": \"<string>\",\n    \"request\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
